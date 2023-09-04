@@ -8,7 +8,7 @@ draw = 0
 rock = 0
 paper = 0
 scissors = 0
-target = 0 # amount of times either player or cpu has to win or hit draw for game to end
+target = 3 # amount of times either player or cpu has to win or hit draw for game to end
 print("ROCK PAPER SCISSORS!!")
 
 while True:
@@ -37,21 +37,22 @@ you chose: """)
       print("draw!")
       print("player has won:", player_win, "cpu has won:", cpu_win, "draws:", draw)
       print("rock,", rock, "paper,", paper, "scissors,", scissors)
-   else:
+   elif cpu == "rock" and player == "scissors" or cpu == "paper" and player == "rock" or cpu == "scissors" and player == ("paper"):
       time.sleep(0.5)
       cpu_win = cpu_win + 1
       print("cpu chose:", cpu)
       print("cpu won!")
       print("player has won:", player_win, "cpu has won:", cpu_win, "draws:", draw)
       print("rock,", rock, "paper,", paper, "scissors,", scissors)
+   else:
+      print("incorrect input")
     
-      if player_win == 3: # end the game (code) after target is reached
-         print("GAME OVER") # print respective statement before break
-         break # break func is used to end the code
-      elif cpu_win == 3:
-         print("GAME OVER")
-         break
-      else:
-         draw == 3
-         print("GAME ENDED IN TIE")
-         break
+   if player_win == 3: # end the game (code) after target is reached
+      print("GAME OVER") # print respective statement before break
+      break # break func is used to end the code
+   elif cpu_win == 3:
+      print("GAME OVER")
+      break
+   elif draw == 3:
+      print("GAME ENDED IN TIE")
+      break
