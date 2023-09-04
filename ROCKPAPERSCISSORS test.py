@@ -48,11 +48,14 @@ you chose: """)
       print("incorrect input")
     
    if player_win == 3: # end the game (code) after target is reached
-      print("GAME OVER") # print respective statement before break
+      print("GAME OVER")
+      time.sleep(3) # print respective statement before break
       break # break func is used to end the code
    elif cpu_win == 3:
       print("GAME OVER")
+      time.sleep(3)
       break
    elif draw == 3:
       print("GAME ENDED IN TIE")
+      time.sleep(3)
       break
